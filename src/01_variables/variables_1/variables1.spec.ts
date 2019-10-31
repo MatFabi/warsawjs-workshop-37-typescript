@@ -35,13 +35,13 @@ describe('Variables dynamic types', () => {
         // write assertion for value2 value
     });
 
-    // it('value2- different value assignment - one more time', () => {
-    //     value2 = 1;
-    //     value2 = 'Test';
-    //     value2 = value2 / 2;
-    //     value2 = value2 + "2";
+    it('value2- different value assignment - one more time', () => {
+        value2 = 1;
+        value2 = 'Test';
+        value2 = value2 / 2;
+        value2 = value2 + "2";
 
-    //     expect(typeof value2).to.equal(/*exercise*/);
-    //     expect(value2).to.equal(/*exercise*/);
-    // });
+        expect(typeof value2).to.equal("string");
+        expect(value2).to.equal("NaN2");
+    });
 });

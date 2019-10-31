@@ -4,28 +4,28 @@ import { expect } from 'chai';
 describe('Variables basic types', () => {
     
 
-    // it('Boolean', () => {
-    //     let isTrue: boolean;
-    //     expect(typeof isTrue).to.equal(/*exercise*/);
+    it('Boolean', () => {
+        let isTrue: boolean;
+        expect(typeof isTrue).to.equal("undefined");
 
-    //     isTrue = true;
-    //     expect(typeof isTrue).to.equal(/*exercise*/);
-    //     expect(isTrue).to.equal(/*exercise*/);
-    // });
+        isTrue = true;
+        expect(typeof isTrue).to.equal("boolean");
+        expect(isTrue).to.equal(true);
+    });
 
-    // it('Number', () => {
-    //     var integer = 6;
-    //     var hex = 0xf00d;
-    //     var binary = 0b1010;
-    //     var octal = 0o744;
-    //     var decimal = 0.21;
+    it('Number', () => {
+        var integer = 6;
+        var hex = 0xf00d;
+        var binary = 0b1010;
+        var octal = 0o744;
+        var decimal = 0.21;
 
-    //     expect(typeof integer).to.equal(/*exercise*/);
-    //     expect(typeof hex).to.equal(/*exercise*/);
-    //     expect(typeof binary).to.equal(/*exercise*/);
-    //     expect(typeof octal).to.equal(/*exercise*/);
-    //     expect(typeof decimal).to.equal(/*exercise*/);
-    // });
+        expect(typeof integer).to.equal("number");
+        expect(typeof hex).to.equal("number");
+        expect(typeof binary).to.equal("number");
+        expect(typeof octal).to.equal("number");
+        expect(typeof decimal).to.equal("number");
+    });
 
     it('String', () => {
         let fullName: string = `Bob Bobbington`;
@@ -45,15 +45,15 @@ describe('Variables basic types', () => {
         expect(typeof list2[0]).to.equal("number");
     })
 
-    // it('Enum', () => {
-    //     enum Color {Red, Green, Blue = 6}
-    //     let c: Color = Color.Green; 
+    it('Enum', () => {
+        enum Color {Red, Green, Blue = 6}
+        let c: Color = Color.Green; 
 
-    //     expect(typeof Color).to.equal();
-    //     expect(typeof c).to.equal(/*exercise*/);
-    //     expect(c).to.equal(/*exercise*/);
-    //     expect(Color.Blue).to.equal(/*exercise*/);
-    // })
+        expect(typeof Color).to.equal("object");
+        expect(typeof c).to.equal("number");
+        expect(c).to.equal(1);
+        expect(Color.Blue).to.equal(6);
+    })
 
     it('Tuple', () => {
         let x: [string, number];
