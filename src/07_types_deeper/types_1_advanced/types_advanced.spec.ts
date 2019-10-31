@@ -4,10 +4,15 @@ describe('Types - introduction', () => {
 
     // it('Intersection types', () => {
 
-    //     function extend<T, U>(first: T, second: U): /*Exercise - fill type*/ {
-    //         /*Exercise fill body*/
+    //     interface Type1 {
+    //         name:string;
     //     }
-
+    //     interface Type2 {
+    //         login:string;
+    //     }        
+    //     function extend<T, U>(first: T, second: U): Type1 & Type2 {
+         
+    //     }
     //     class Person {
     //         name = 'PersonName';
     //     }
@@ -96,29 +101,30 @@ describe('Types - introduction', () => {
 
     // //--------------------------------------------------Exercise 1------------------------------------------------------
 
-    // it('Type Aliases', () => {
-    //     type Tree<T> = /*Exercise - implement Tree type which will contain parent property and other properties from T*/
+    it('Type Aliases', () => {
+        type Tree<T> = T & {parent: Tree <T>}
+        
+        interface Node {
+            name: string;
+        }
 
-    //     class Node {
-    //         name: string;
-    //     }
+        var node: Tree<Node> = {name: "Test", parent: {name: "ParentTest", parent: null}};
 
-    //     var node: Tree<Node> = {name: "Test", parent: {name: "ParentTest", parent: null}};
+        expect(node.name).to.equal("Test");
+        expect(node.parent.name).to.equal("ParentTest");
+    })
 
-    //     expect(node.name).to.equal("Test");
-    //     expect(node.parent.name).to.equal("ParentTest");
-    // })
+    it('Literal type', () => {
+        type Choise = "A"|"B"|"C"|"D"
+        /*Exercise - implement chose type which will allow only A,B,C,D*/
 
-    // it('Literal type', () => {
-    //     type Choise = /*Exercise - implement chose type which will allow only A,B,C,D*/
+        function getChoise(choise: Choise) {
+            return choise;
+        }
 
-    //     function getChoise(choise: Choise) {
-    //         return choise;
-    //     }
-
-    //     expect(getChoise("A")).to.equal("A");
-    //     //expect(getChoise("E")).to.equal("E");  // this should throw error
-    // })
+        expect(getChoise("A")).to.equal("A");
+        //expect(getChoise("E")).to.equal("E");  // this should throw error
+    })
 
     // it('Polymorphic this types', () => {
     //     class BasicCalculator {
