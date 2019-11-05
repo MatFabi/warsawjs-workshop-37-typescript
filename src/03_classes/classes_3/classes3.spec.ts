@@ -15,12 +15,19 @@ abstract class Department {
 
 // Exercise - implement IT class which will extend Department class
 
-
+class IT extends Department{
+    constructor(){
+        super("IT");
+    }
+    printMeetingName() {
+        return `${this.constructor.name} meeting`;
+    }
+}
 describe('Class - abstract', () => {
-    // it('IT - use extended methods', () => {
-    //     var it = new IT();
+    it('IT - use extended methods', () => {
+        var it = new IT();
 
-    //     expect(it.printMeetingName()).to.equal('IT meeting');
-    // });
+        expect(it.printMeetingName()).to.equal('IT meeting');
+    });
 });
 

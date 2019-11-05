@@ -66,24 +66,26 @@ describe('Interfaces - introduction', () => {
         expect(getLabel(myObj2)).to.equal('test');
     });
 
-    // it('Required object parameter with interface - with extenstion', () => {
+    it('Required object parameter with interface - with extenstion', () => {
 
-    //     interface IMyObject {
-    //         label: string,
-    //     }
+        interface IMyObject {
+            label: string,
+        }
+        interface IMyObjectWithSize extends IMyObject{
+            size?:number
+        }
+        /*Exercise - implement missing interface here*/
 
-    //     /*Exercise - implement missing interface here*/
-
-    //     function getLabel(labelledObj: IMyObjectWithSize) {
-    //         return labelledObj.label + (labelledObj.size ? labelledObj.size : '');
-    //     }
+        function getLabel(labelledObj: IMyObjectWithSize) {
+            return labelledObj.label + (labelledObj.size ? labelledObj.size : '');
+        }
         
-    //     let myObj: IMyObjectWithSize = {size: 10, label: "test"};
-    //     let myObj2: IMyObject = {label: "test"};
+        let myObj: IMyObjectWithSize = {size: 10, label: "test"};
+        let myObj2: IMyObject = {label: "test"};
 
-    //     expect(getLabel(myObj)).to.equal('test10');
-    //     expect(getLabel(myObj2)).to.equal('test');
-    // });
+        expect(getLabel(myObj)).to.equal('test10');
+        expect(getLabel(myObj2)).to.equal('test');
+    });
 
     it('Required object parameter with interface - index signatures', () => {
 
